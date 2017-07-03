@@ -11,18 +11,19 @@ package knockknockclient;
  */
 import java.io.*;
 import java.net.*;
+import javax.swing.JOptionPane;
 
 public class KnockKnockClient {
     public static void main(String[] args) throws IOException {
         
-        if (args.length != 2) {
-            System.err.println(
-                "Usage: java EchoClient <host name> <port number>");
-            System.exit(1);
-        }
+//        if (args.length != 2) {
+//            System.err.println(
+//                "Usage: java EchoClient <host name> <port number>");
+//            System.exit(1);
+//        }
 
-        String hostName = args[0];
-        int portNumber = Integer.parseInt(args[1]);
+        String hostName = JOptionPane.showInputDialog("Ingrese la ip");
+        int portNumber = 4445;
 
         try (
             Socket kkSocket = new Socket(hostName, portNumber);
@@ -54,5 +55,13 @@ public class KnockKnockClient {
                 hostName);
             System.exit(1);
         }
+    }
+    
+    
+    public void datos(String nombreus, String cont, String mens){
+    
+            System.out.println(nombreus + cont + mens);
+    
+    
     }
 }
